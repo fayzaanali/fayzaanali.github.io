@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400&display=swap');
+
+:root {
+    --main: #141414;
+    --secondary: #383838;
+  }
+
+body {
+    background-color: #141414;
+    color: #FFF;
+    font-family: 'Nunito', sans-serif;
+    font-weight: lighter;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;;
+}
+
+nav {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.brand-logo {
+    font-weight: bold;
+    font-size: 2.5rem !important;
+}
+
+.card {
+    background-color: transparent;
+    box-shadow: none;
+    border: 2px solid var(--secondary);
+}
+
+.page-footer {
+    background-color: transparent;
+    margin-top: 25px;
+}
+
+.info {
+    font-weight: bold;
+}
+
+.bio {
+    font-size: 18px;
+}
