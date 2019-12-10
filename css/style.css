@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400|Work+Sans:800&display=swap');
 
 :root {
-    --main: #141414;
-    --secondary: #383838;
+    --primary: #141414;
+    --secondary: #2996fc;
+    --tertiary: #eb32fc;
   }
 
 body {
-    background-color: #141414;
+    background-color: var(--primary);
     color: #FFF;
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
@@ -15,24 +16,62 @@ body {
     flex-direction: column;
 }
 
-main {
-    flex: 1 0 auto;;
-}
-
 nav {
+    margin-top: 2.5rem;
     background-color: transparent;
     box-shadow: none;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    font-size: 2rem !important;
+}
+
+a {
+    color: var(--tertiary) !important;
+    opacity: .8;
+    font-weight: bold;
+}
+
+a:hover {
+    opacity: 1;
 }
 
 .brand-logo {
     font-weight: bold;
     font-size: 2.5rem !important;
+    font-family: 'Work Sans', sans-serif;
+    -webkit-text-fill-color: transparent;
+	background-clip: inherit;
+    -webkit-background-clip: text;
+    /* animation */
+    -webkit-animation: titleColor 10s ease infinite;
+    animation: titleColor 10s ease infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 
 .card {
-    background-color: transparent;
-    box-shadow: none;
-    border: 2px solid var(--secondary);
+    margin-top: 2rem;
+    background: linear-gradient(-45deg, var(--secondary), var(--tertiary), var(--secondary), var(--tertiary));
+    background-size: 200% 200%;
+    padding: 3px;
+    -webkit-animation: colorAnimation 10s ease infinite, fadeIn .8s forwards;
+    animation: colorAnimation 10s ease infinite, fadeIn .8s forwards;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    bottom: -20px;
+    color: #FFF;
+}
+
+.card-content {
+    background-color: var(--primary);
+    opacity: .85;
+}
+
+.card-action {
+    background-color: var(--primary) !important;
+    border-top: 2px solid transparent;
+    opacity: .85;
 }
 
 .page-footer {
@@ -46,4 +85,129 @@ nav {
 
 .bio {
     font-size: 18px;
+}
+
+.icon {
+    opacity: .8;
+    font-weight: normal;
+}
+
+.icon:hover {
+    opacity: 1;
+}
+
+.footer-icon {
+    display: none;
+}
+
+.list {
+    font-size: 16px;
+}
+
+.small-text {
+    font-size: smaller;
+}
+
+/* logo colours */
+
+.linkedIn {
+    color: #2867b2 !important;
+}
+
+.github {
+    color: #575757 !important;
+}
+
+/* Animations */
+
+@keyframes colorAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@-webkit-keyframes colorAnimation {
+	0% {
+        background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes titleColor {
+    0% {
+        background-color: var(--secondary);
+	}
+	100% {
+		background-color: var(--tertiary);
+	}
+}
+
+@-webkit-keyframes titleColor {
+    0% {
+        background-color: var(--secondary);
+	}
+	100% {
+		background-color: var(--tertiary);
+	}
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    } 100% {
+        bottom: 0;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    } 100% {
+        bottom: 0;
+    }
+}
+
+/* resize */
+@media (max-width: 1000px) {
+    .brand-logo {
+        font-size: 1.5rem !important;
+    }
+
+    .info {
+        font-size: 1.3rem;
+    }
+    
+    .bio {
+        font-size: 15px;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+        font-size: 24px !important;
+    }
+
+    .footer-icon {
+        font-size: 1.7rem !important;
+        padding: 5px;
+        float: right;
+        display: initial;
+    }
 }

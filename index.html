@@ -6,91 +6,55 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fayzaan Ali | Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://kit.fontawesome.com/fb2a89a01d.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <nav>
     <div class="nav-wrapper">
       <div class="container">
-        <!-- replace with image logo -->
-        <a href="#" class="brand-logo">Fayzaan Ali</a>
-        <!-- replace with image logo -->
+        <!-- brand & info -->
+        <b href="#" class="brand-logo">FAYZAAN ALI</b>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="https://github.com/fayzaanali" target="_blank">GitHub</a></li>
-          <li><a href="#">Projects</a></li>
+          <li><a href="https://github.com/fayzaanali" target="_blank" class="icon github"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/fayzaanali/" target="_blank" class="icon linkedIn"><i class="fab fa-linkedin"></i></a></li>
         </ul>
+        <!-- brand & info -->
       </div>
     </div>
   </nav>
   <div class="container">
     <h5 class="info">Who am I?</h5>
-    <p class="bio">I'm currently a student studying Games Programming at <a href="https://www.staffs.ac.uk/"
-        target="_blank">Staffordshire University</a>.
+    <div class="bio">
+      <!-- avatar here?
+      <div style="float: right;"></div> -->
+      <p>I'm currently a student studying Games Programming at <a href="https://www.staffs.ac.uk/" target="_blank">Staffordshire University</a>.
+      <br>I'm always eager to learn new skills and to work on new things!
       <br>Here you can find projects I'm currently working on and get to know me a little bit more.</p>
+      <p>I do a bit of web development too, some languages and skills I'm currently learning...</p>
+      <div class="list" style="margin-left: 2rem; float: left;">
+        <li>C++</li>
+        <li>PHP</li>
+        <li>JavaScript / Node.JS</li>
+      </div>
+      <div class="list" style="margin-left: 2rem; float: left;">
+        <li>UE4</li>
+        <li>PhotoShop</li>
+      </div>
+      <br><br><br>
+    </div>
+    <!-- handled by js/github.js -->
     <div class="row">
-      <div class="col s12 m6">
-        <div class="card darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m6">
-        <div class="card darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m6">
-        <div class="card darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-          </div>
-        </div>
-      </div>
+      <div id="repo"></div>
     </div>
-  </div>
   <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <a href="https://www.linkedin.com/in/fayzaanali/" target="_blank" class="footer-icon linkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/fayzaanali" target="_blank" class="footer-icon github"><i class="fab fa-github"></i></a>
     <div class="footer-copyright">
-      <div class="container">
-        © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
+      © fayzaanali.github.io. All rights reserved
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/github.js"></script>
 </body>
 </html>
