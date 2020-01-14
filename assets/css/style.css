@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400|Work+Sans:800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400|Fugaz+One&display=swap');
 
 :root {
     --primary: #141414;
@@ -39,8 +39,8 @@ a:hover {
 
 .brand-logo {
     font-weight: bold;
-    font-size: 2.5rem !important;
-    font-family: 'Work Sans', sans-serif;
+    font-size: 3rem !important;
+    font-family: 'Fugaz One', cursive;
     -webkit-text-fill-color: transparent;
 	background-clip: inherit;
     -webkit-background-clip: text;
@@ -80,6 +80,15 @@ a:hover {
     opacity: .85;
 }
 
+.card-description {
+    overflow-y: scroll;
+    max-height: 22px;
+}
+
+.card-description::-webkit-scrollbar {
+    display: none;
+}
+
 .page-footer {
     background-color: transparent !important;
     margin-top: 25px;
@@ -87,6 +96,9 @@ a:hover {
 
 .info {
     font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: -15px;
 }
 
 .bio {
@@ -106,22 +118,23 @@ a:hover {
     display: none;
 }
 
-.page-footer .footer-copyright {
+.footer {
     background-color: transparent;
-}
-
-.list {
-    font-size: 16px;
-    margin-left: 2rem;
-    float: left;
+    opacity: 20%;
+    padding: 20px;
 }
 
 .small-text {
-    font-size: smaller;
+    font-size: .82rem;
+    opacity: 50%;
 }
 
-.text-center {
-    text-align: center;
+.row {
+    margin-top: 1rem !important;
+}
+
+.img {
+    padding: 5px;
 }
 
 /* logo colours */
@@ -132,6 +145,11 @@ a:hover {
 
 .github {
     color: #575757 !important;
+}
+
+.icon8 {
+    color: #5bc347 !important;
+    font-weight: bold;
 }
 
 /* Animations */
@@ -200,10 +218,6 @@ a:hover {
 
 /* resize */
 @media (max-width: 1000px) {
-    .brand-logo {
-        font-size: 1.5rem !important;
-    }
-
     .info {
         font-size: 1.3rem;
     }
@@ -216,6 +230,10 @@ a:hover {
         display: none;
     }
 
+    .row .col.m6 {
+        width: 100%;
+    }
+
     nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
         font-size: 24px !important;
     }
@@ -225,5 +243,10 @@ a:hover {
         padding: 5px;
         float: right;
         display: initial;
+    }
+
+    .img {
+        height: 47px;
+        width: 47px;
     }
 }
