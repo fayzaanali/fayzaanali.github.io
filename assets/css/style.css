@@ -51,7 +51,7 @@ a:hover {
 .card {
     margin-bottom: 1.3rem;
     background: radial-gradient(var(--secondary), var(--tertiary));
-    background-size: 500% 500%;
+    background-size: 300% 300%;
     padding: 3px;
     -webkit-animation: colorAnimation 10s ease-in-out infinite, fadeIn .8s forwards;
     animation: colorAnimation 10s ease-in-out infinite, fadeIn .8s forwards;
@@ -165,8 +165,14 @@ a:hover {
 	0% {
         background-position: top;
     }
+    25% {
+        background-position: right;
+    }
     50% {
         background-position: bottom;
+    }
+    75% {
+        background-position: left;
     }
     100% {
         background-position: top;
@@ -177,8 +183,14 @@ a:hover {
 	0% {
         background-position: top;
     }
+    25% {
+        background-position: right;
+    }
     50% {
         background-position: bottom;
+    }
+    75% {
+        background-position: left;
     }
     100% {
         background-position: top;
