@@ -49,7 +49,7 @@ a:hover {
 }
 
 .card {
-    margin-top: 2rem;
+    margin-bottom: 1.3rem;
     background: radial-gradient(var(--secondary), var(--tertiary));
     background-size: 500% 500%;
     padding: 3px;
@@ -60,7 +60,6 @@ a:hover {
 }
 
 .card:hover {
-    margin-top: 1.6rem;
     box-shadow: 12px 12px #0e0f10;
 }
 
