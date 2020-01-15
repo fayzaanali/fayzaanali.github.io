@@ -11,9 +11,6 @@ body {
     color: #FFF;
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
     background-image: url('../img/bg.png');
 }
 
@@ -53,13 +50,11 @@ a:hover {
 
 .card {
     margin-top: 2rem;
-    background: linear-gradient(110deg, var(--secondary), var(--tertiary), var(--secondary));
-    background-size: 200% 200%;
+    background: radial-gradient(var(--secondary), var(--tertiary));
+    background-size: 500% 500%;
     padding: 3px;
-    -webkit-animation: colorAnimation 10s ease infinite, fadeIn .8s forwards;
-    animation: colorAnimation 10s ease infinite, fadeIn .8s forwards;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
+    -webkit-animation: colorAnimation 10s ease-in-out infinite, fadeIn .8s forwards;
+    animation: colorAnimation 10s ease-in-out infinite, fadeIn .8s forwards;
     bottom: -20px;
     color: #FFF;
 }
@@ -137,6 +132,17 @@ a:hover {
     padding: 5px;
 }
 
+.img-collection {
+    padding: 5px;
+}
+
+.content {
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-animation: fadeIn .8s forwards;
+    animation: fadeIn .8s forwards;
+}
+
 /* logo colours */
 
 .linkedIn {
@@ -152,30 +158,32 @@ a:hover {
     font-weight: bold;
 }
 
+
+
 /* Animations */
 
 @keyframes colorAnimation {
 	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
 }
 
 @-webkit-keyframes colorAnimation {
 	0% {
-        background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
 }
 
 @keyframes titleColor {
