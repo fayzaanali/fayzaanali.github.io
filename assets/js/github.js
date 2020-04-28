@@ -6,6 +6,7 @@ var tags = {
  
 fetch('https://api.github.com/users/fayzaanali').then(res => res.json()).then(data => {
   fetch('https://api.github.com/users/fayzaanali/repos').then(res => res.json()).then(repo => {
+    // add modal here and use loop to create multiple ids
     var mainContainer = document.getElementById("row");
       for (i = 0; i < data.public_repos; i++) {
         if (tags[repo[i].name] == undefined) tags[repo[i].name] = "N/A";
@@ -19,7 +20,7 @@ fetch('https://api.github.com/users/fayzaanali').then(res => res.json()).then(da
             <p class="small-text">${tags[repo[i].name]}</p>
           </div>
           <div class="card-action">
-            <a href="${repo[i].html_url}" target="_blank">Repo</a>
+            <a href="${repo[i].html_url}" target="_blank"><i class="fas fa-code-branch"></i> REPO</a>
             <!-- <a href="#" style="float: right; margin-right: 0;">More Info</a> -->
           </div>
         </div>
@@ -27,4 +28,4 @@ fetch('https://api.github.com/users/fayzaanali').then(res => res.json()).then(da
       mainContainer.appendChild(div);
       }
     }).catch(err => console.error(err));
-}).catch(err => console.error(err))
+}).catch(err => console.error(err));

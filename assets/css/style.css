@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400|Fugaz+One&display=swap');
 
 :root {
-    --primary: #141414;
+    --primary: #030303;
     --secondary: #2996fc;
     --tertiary: #eb32fc;
   }
@@ -11,7 +11,6 @@ body {
     color: #FFF;
     font-family: 'Nunito', sans-serif;
     font-weight: lighter;
-    background-image: url('../img/bg.png');
 }
 
 nav {
@@ -51,16 +50,20 @@ a:hover {
 .card {
     margin-bottom: 1.3rem;
     background: radial-gradient(var(--secondary), var(--tertiary));
-    background-size: 300% 300%;
+    background-size: 200% 200%;
     padding: 3px;
-    -webkit-animation: colorAnimation 10s ease-in-out infinite, fadeIn .8s forwards;
-    animation: colorAnimation 10s ease-in-out infinite, fadeIn .8s forwards;
+    -webkit-animation: fadeIn .8s forwards;
+    animation: fadeIn .8s forwards;
     bottom: -20px;
     color: #FFF;
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
-.card:hover {
-    box-shadow: 12px 12px #0e0f10;
+.card:focus {
+    /* box-shadow: 12px 12px #0e0f10; */
+    transform: rotateX(180deg);
+    transition: transform .5s;
 }
 
 .card-content {
@@ -142,6 +145,10 @@ a:hover {
     animation: fadeIn .8s forwards;
 }
 
+.info {
+    display: none;
+}
+
 /* logo colours */
 
 .linkedIn {
@@ -152,16 +159,10 @@ a:hover {
     color: #575757 !important;
 }
 
-.icon8 {
-    color: #5bc347 !important;
-    font-weight: bold;
-}
-
-
 
 /* Animations */
 
-@keyframes colorAnimation {
+/* @keyframes colorAnimation {
 	0% {
         background-position: top;
     }
@@ -195,7 +196,7 @@ a:hover {
     100% {
         background-position: top;
     }
-}
+} */
 
 @keyframes titleColor {
     0% {
