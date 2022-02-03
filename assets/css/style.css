@@ -1,16 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400|Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito:wght@200;400;700&display=swap');
 
-:root {
-    --primary: #030303;
-    --secondary: #2996fc;
-    --tertiary: #eb32fc;
-  }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #242424;
+        --bgDark: #141414;
+        --font: #c2c2c2;
+        --fontDark: #e7e7e7;
+        /* theme */
+        --theme: #b8b8b8;
+        --themeHover: #dddddd;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #ffffff;
+        --bgDark: #fafafb;
+        --font: #434853;
+        --fontDark: #10161b;
+        /* theme */
+        --theme: #a7a7a7;
+        --themeHover: #777777;
+    }
+}
 
 body {
-    background-color: var(--primary);
-    color: #FFF;
+    background-color: var(--bgDark);
+    color: var(--font);
     font-family: 'Nunito', sans-serif;
-    font-weight: lighter;
+    background-image: url(../img/bg.png);
+    background-size: cover;
 }
 
 nav {
@@ -24,7 +43,7 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
 }
 
 a {
-    color: var(--tertiary) !important;
+    color: var(--fontDark) !important;
     opacity: .8;
     font-weight: bold;
 }
@@ -34,68 +53,79 @@ a:hover {
 }
 
 .brand-logo {
+    color: var(--theme) !important;
+    font-family: 'Fugaz One', cursive;
     font-weight: bold;
     font-size: 3rem !important;
-    font-family: 'Fugaz One', cursive;
-    -webkit-text-fill-color: transparent;
-	background-clip: inherit;
-    -webkit-background-clip: text;
-    /* animation */
-    -webkit-animation: titleColor 10s ease infinite;
-    animation: titleColor 10s ease infinite;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
+    margin-left: 1rem;
+    filter: brightness(.8);
 }
 
 .card {
     margin-bottom: 1.3rem;
-    background: radial-gradient(var(--secondary), var(--tertiary));
-    background-size: 200% 200%;
     padding: 3px;
-    -webkit-animation: fadeIn .8s forwards;
-    animation: fadeIn .8s forwards;
-    bottom: -20px;
-    color: #FFF;
-    transform-style: preserve-3d;
-    transition: transform .5s;
+    border-radius: .3rem !important;
+    /* bg & animation */
+    background: radial-gradient(circle, #a3a3a3, #333333);
+    background-size: 150% 150%;
+    -webkit-animation: colorAnimation 5s ease-in-out infinite, .5s forwards;
+    animation: colorAnimation 5s ease-in-out infinite, fadeIn .5s forwards;
 }
 
-.card:focus {
-    /* box-shadow: 12px 12px #0e0f10; */
-    transform: rotateX(180deg);
-    transition: transform .5s;
+.card:hover {
+    transition: .3s;
+    box-shadow: 0px 0px 5px 1px var(--themeHover);
+    
+}
+
+.card:hover .card-title {
+    color: var(--themeHover) !important; 
+    transition: .3s;
 }
 
 .card-content {
-    background-color: var(--primary);
-    opacity: .85;
+    font-weight: bolder !important;
+    background-color: var(--bgDark);
+    border-top-left-radius: .3rem !important;
+    border-top-right-radius: .3rem !important;
+}
+
+.card-title::before {
+    content: "📁 ";
+    text-shadow: none;
+}
+
+.card-title {
+    color: var(--theme);
+    font-weight: bolder !important;
 }
 
 .card-action {
-    background-color: var(--primary) !important;
-    border-top: 2px solid transparent;
-    opacity: .85;
+    border-top: none !important;
+    background-color: var(--bgDark) !important;
+    font-size: small;
 }
 
 .card-description {
     overflow-y: scroll;
     max-height: 22px;
+    color: var(--font);
+    scrollbar-width: none;
 }
 
 .card-description::-webkit-scrollbar {
     display: none;
 }
 
+.code-colour {
+    padding-right: 1.2rem;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
 .page-footer {
     background-color: transparent !important;
     margin-top: 25px;
-}
-
-.info {
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-top: 25px;
-    margin-bottom: -15px;
 }
 
 .bio {
@@ -123,7 +153,7 @@ a:hover {
 
 .small-text {
     font-size: .82rem;
-    opacity: 50%;
+    color: var(--font);
 }
 
 .row {
@@ -145,12 +175,7 @@ a:hover {
     animation: fadeIn .8s forwards;
 }
 
-.info {
-    display: none;
-}
-
 /* logo colours */
-
 .linkedIn {
     color: #2867b2 !important;
 }
@@ -159,63 +184,7 @@ a:hover {
     color: #575757 !important;
 }
 
-
 /* Animations */
-
-/* @keyframes colorAnimation {
-	0% {
-        background-position: top;
-    }
-    25% {
-        background-position: right;
-    }
-    50% {
-        background-position: bottom;
-    }
-    75% {
-        background-position: left;
-    }
-    100% {
-        background-position: top;
-    }
-}
-
-@-webkit-keyframes colorAnimation {
-	0% {
-        background-position: top;
-    }
-    25% {
-        background-position: right;
-    }
-    50% {
-        background-position: bottom;
-    }
-    75% {
-        background-position: left;
-    }
-    100% {
-        background-position: top;
-    }
-} */
-
-@keyframes titleColor {
-    0% {
-        background-color: var(--secondary);
-	}
-	100% {
-		background-color: var(--tertiary);
-	}
-}
-
-@-webkit-keyframes titleColor {
-    0% {
-        background-color: var(--secondary);
-	}
-	100% {
-		background-color: var(--tertiary);
-	}
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -233,6 +202,41 @@ a:hover {
         opacity: 1;
     } 100% {
         bottom: 0;
+    }
+}
+
+@keyframes colorAnimation {
+	0% {
+        background-position: top;
+    }
+    25% {
+        background-position: right;
+    }
+    50% {
+        background-position: bottom;
+    }
+    75% {
+        background-position: left;
+    }
+    100% {
+        background-position: top;
+    }
+}
+@-webkit-keyframes colorAnimation {
+	0% {
+        background-position: top;
+    }
+    25% {
+        background-position: right;
+    }
+    50% {
+        background-position: bottom;
+    }
+    75% {
+        background-position: left;
+    }
+    100% {
+        background-position: top;
     }
 }
 
@@ -268,5 +272,9 @@ a:hover {
     .img {
         height: 47px;
         width: 47px;
+    }
+
+    .brand-logo {
+        margin-left: 0;
     }
 }
