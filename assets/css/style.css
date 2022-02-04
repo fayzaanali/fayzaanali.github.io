@@ -90,6 +90,12 @@ a:hover {
     border-top-right-radius: .3rem !important;
 }
 
+.card .card-content {
+    border-radius: 0 0 0px 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
 .card-title::before {
     content: "📁 ";
     text-shadow: none;

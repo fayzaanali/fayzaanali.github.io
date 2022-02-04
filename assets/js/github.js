@@ -15,18 +15,20 @@ function fetchGithub(githubUser){
           var div = document.createElement("div");
           div.innerHTML = 
           `<div class="col s12 m6">
-          <div class="card darken-1">
-            <div class="card-content white-text">
-              <a href="${repo[i].html_url}" target="_blank"><span class="card-title">${repo[i].name}</span></a>
-              <p class="card-description">${repo[i].description}</p>
-              <p class="small-text">${tags[repo[i].name]}</p>
-            </div>
-            <div class="card-action">
-              <span class="code-colour" style="background-color: ${colour[repo[i].language] || "#fff"};"></span> ${repo[i].language}
-              <div style="float: right; margin-right: 0;"><i class="fas fa-code-branch"></i> ${repo[i].forks_count} <i class="fas fa-star"></i> ${repo[i].stargazers_count}</div>
-            </div>
-          </div>
-        </div>`
+            <a href="${repo[i].html_url}" target="_blank">
+              <div class="card darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">${repo[i].name}</span>
+                  <p class="card-description">${repo[i].description}</p>
+                  <p class="small-text">${tags[repo[i].name]}</p>
+                </div>
+                <div class="card-action">
+                  <span class="code-colour" style="background-color: ${colour[repo[i].language] || "#fff"};"></span> ${repo[i].language}
+                  <div style="float: right; margin-right: 0;"><i class="fas fa-code-branch"></i> ${repo[i].forks_count} <i class="fas fa-star"></i> ${repo[i].stargazers_count}</div>
+                </div>
+              </div>
+            </a>
+          </div>`
         mainContainer.appendChild(div);
         }
       }).catch(err => console.error(err));
