@@ -11,6 +11,7 @@ function fetchGithub(githubUser){
           `<div class="col s12 m4">
             <a href="${repo[i].html_url}" target="_blank">
               <div class="card darken-1">
+              <div class="card-thumbnail"><img src="../assets/img/thumbnail/${repo[i].name}.png"></div>
                 <div class="card-content white-text">
                   <span class="card-title">${repo[i].name} <i class="fas fa-external-link-alt title-link"></i></span>
                   <p class="card-description">${repo[i].description}</p>

@@ -85,15 +85,28 @@ a:hover {
     transform: translate3d(0,0,-1px);
     background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     filter: blur(5px);
-    -webkit-animation: colorAnimation 5s ease-in-out infinite, .5s forwards;
-    animation: colorAnimation 5s ease-in-out infinite;
+}
+
+.card:hover::before
+{
+    filter: blur(7px);
 }
 
 .card:hover {
     transition: .3s;
-    filter: brightness(115%);
+    filter: brightness(120%);
 
 }
+
+.card-thumbnail img {
+    width: 100%;
+    display: block;
+    margin-bottom: .2rem;
+    padding: .5rem;
+    border-radius: .3rem !important;
+    background-color: var(--bgDark);
+}
+
 
 .card-title {
     background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
@@ -110,8 +123,8 @@ a:hover {
     background-color: var(--bgDark);
     border-top-left-radius: .3rem !important;
     border-top-right-radius: .3rem !important;
-    min-height: 10.5rem;
-    max-height: 10.5rem;
+    min-height: 7rem;
+    max-height: 7rem;
 }
 
 .card .card-content {
