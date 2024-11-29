@@ -10,8 +10,8 @@ Unfortunately we did not win but our game is published on [Itch.IO](https://alet
 ![WASTELAND SURVIVORS](/assets/img/thumbnail/Wasteland%20Survivors%20GE3.png)
 - The end result for the in-game UI for Wasteland Survivors.
 -
-![WASTELAND SURVIVORS](/assets/img/misc/wasteland_survivors/screenshot1.png)
+![WASTELAND SURVIVORS](/assets/img/misc/wasteland_screenshot1.png)
 - UI layout using [Draw.io](https://app.diagrams.net/).
 -
-![WASTELAND SURVIVORS](/assets/img/misc/wasteland_survivors/screenshot2.png)
+![WASTELAND SURVIVORS](/assets/img/misc/wasteland_screenshot2.png)
 - A early concept for the in-game UI which I had help from a member in our group.
