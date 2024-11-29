@@ -1,33 +1,60 @@
-function fetchGithub(githubUser){  
-  fetch('assets/js/json/colour.json').then(res => res.json()).then(colour => {
-    fetch('https://api.github.com/users/' + githubUser).then(res => res.json()).then(data => {
-      fetch('https://api.github.com/users/' + githubUser + '/repos').then(res => res.json()).then(repo => {
-      var mainContainer = document.getElementById("row");
-        for (i = 0; i < data.public_repos; i++) {
-          if (repo[i].topics == undefined) repo[i].topics = "N/A";
-          if (repo[i].language == undefined) repo[i].language = "N/A";
-          var div = document.createElement("div");
-          div.innerHTML = 
-          `<div class="col s12 m4">
-            <a href="${repo[i].html_url}" target="_blank">
+async function fetchGithub(githubUser) {
+  try {
+    const colourResponse = await fetch('assets/js/json/colour.json');
+    const colour = await colourResponse.json();
+    const userResponse = await fetch(`https://api.github.com/users/${githubUser}`);
+    const data = await userResponse.json();
+    const reposResponse = await fetch(`https://api.github.com/users/${githubUser}/repos`);
+    const repos = await reposResponse.json();
+    const mainContainer = document.getElementById("card");
+    for (let i = 0; i < data.public_repos; i++) {
+      const repo = repos[i];
+      if (!repo) continue;
+      repo.topics = repo.topics || "N/A";
+      repo.language = repo.language || "N/A";
+      try {
+        const mdResponse = await fetch(`assets/md/${repo.name}.md`);
+        const md = await mdResponse.text();
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <div class="col s12 m4">
+            <a href="#project-git_${i}">
               <div class="card darken-1">
-              <div class="card-thumbnail"><img src="../assets/img/thumbnail/${repo[i].name}.png"></div>
+                <div class="card-thumbnail"><img src="../assets/img/thumbnail/${repo.name}.png"></div>
                 <div class="card-content white-text">
-                  <span class="card-title">${repo[i].name} <i class="fas fa-external-link-alt title-link"></i></span>
-                  <p class="card-description">${repo[i].description}</p>
-                  <p class="small-text tags">${repo[i].topics.toString().split(',').join(', ').toUpperCase()} </p>
+                  <span class="card-title">${repo.name}</span>
+                  <p class="card-description">${repo.description}</p>
+                  <p class="small-text tags">${repo.topics.toString().split(',').join(', ').toUpperCase()} </p>
                 </div>
                 <div class="card-action">
-                  <span class="code-colour" style="background-color: ${colour[repo[i].language] || "#fff"};"></span> ${repo[i].language}
-                  <div style="float: right; margin-right: 0;"><i class="fas fa-code-branch"></i> ${repo[i].forks_count} <i class="fas fa-star"></i> ${repo[i].stargazers_count} <i class="far fa-calendar" style="padding-left: 10px; padding-right: 2px"></i> ${new Date(repo[i].created_at).getUTCFullYear()}</div>
+                  <span class="code-colour" style="background-color: ${colour[repo.language] || "#fff"};"></span> ${repo.language}
+                  <div style="float: right; margin-right: 0;">
+                    <i class="fas fa-code-branch"></i> ${repo.forks_count} 
+                    <i class="fas fa-star"></i> ${repo.stargazers_count} 
+                    <i class="far fa-calendar" style="padding-left: 10px; padding-right: 2px"></i> ${new Date(repo.created_at).getUTCFullYear()}
+                  </div>
                 </div>
               </div>
             </a>
-          </div>`
+          </div>
+          <div class="popup" id="project-git_${i}">
+            <a class="popup-overlay" href="#"></a>
+            <div class="popup-wrapper">
+              <div class="popup-content">
+                <a class="popup-close" href="#"><i class="fas fa-times card-title"></i></a>
+                <div class="popup-box" id="md">
+                  ${marked.parse(md)}
+                </div>
+              </div>
+            </div>
+          </div>`;
         mainContainer.appendChild(div);
-        }
-      }).catch(err => console.error(err));
-    }).catch(err => console.error(err));
-  })
-};
+      } catch (err) {
+        console.error(`Error fetching markdown for repo ${repo.name}:`, err);
+      }
+    }
+  } catch (err) {
+    console.error("Error fetching data:", err);
+  }
+}
 fetchGithub("fayzaanali");

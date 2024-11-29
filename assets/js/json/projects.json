@@ -1,0 +1,12 @@
+{
+    "projects": [
+        {
+            "name": "Wasteland Survivors GE3",
+            "description": "Survival game project for Skills City.",
+            "link": "https://github.com/Aletdownofstate/WastelandSurvivorsGE3",
+            "language": "C#",
+            "year": 2024,
+            "tags": ["Unity", "C#", "UI"]
+        }
+    ]
+}
