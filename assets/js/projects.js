@@ -36,7 +36,7 @@ async function fetchProject() {
               <div class="popup-content">
                 <a class="popup-close" href="#"><i class="fas fa-times card-title"></i></a>
                 <div class="popup-box" id="md">
-                  ${marked.parse(md)}
+                  ${DOMPurify.sanitize(marked.parse(md))}
                 </div>
               </div>
             </div>
