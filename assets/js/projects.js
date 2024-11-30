@@ -19,7 +19,8 @@ async function fetchProject() {
             <div class="card darken-1">
             <div class="card-thumbnail"><img src="../assets/img/thumbnail/${data.name}.png"></div>
               <div class="card-content white-text">
-                <span class="card-title">${data.name}</span>
+                <a href="${data.link}" target="_blank"><i class="fab fa-github github-link"></i></a>
+                <a href="${data.link}" target="_blank"><span class="card-title">${data.name}</span></a>
                 <p class="card-description">${data.description}</p>
                 <p class="small-text tags">${data.tags.toString().split(',').join(', ').toUpperCase()} </p>
               </div>

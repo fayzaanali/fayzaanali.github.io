@@ -22,7 +22,8 @@ async function fetchGithub(githubUser) {
               <div class="card darken-1">
                 <div class="card-thumbnail"><img src="../assets/img/thumbnail/${repo.name}.png"></div>
                 <div class="card-content white-text">
-                  <span class="card-title">${repo.name}</span>
+                <a href="https://github.com/${githubUser}/${repo.name}" target="_blank"><i class="fab fa-github github-link"></i></a>
+                  <a href="https://github.com/${githubUser}/${repo.name}" target="_blank"><span class="card-title">${repo.name}</span></a>
                   <p class="card-description">${repo.description}</p>
                   <p class="small-text tags">${repo.topics.toString().split(',').join(', ').toUpperCase()} </p>
                 </div>
