@@ -26,7 +26,7 @@ async function fetchProject() {
               </div>
               <div class="card-action">
                 <span class="code-colour" style="background-color: ${colour[data.language] || "#fff"};"></span> ${data.language}
-                <div style="float: right; margin-right: 0;"> <i class="fas fa-user-friends"></i> <i class="far fa-calendar" style="padding-left: 10px; padding-right: 2px"></i> ${data.year}</div>
+                <div style="float: right; margin-right: 0;"> <i title="Collaborative Project" class="fas fa-user-friends"></i> <i class="far fa-calendar" style="padding-left: 10px; padding-right: 2px"></i> ${data.year}</div>
               </div>
             </div>
           </a>
