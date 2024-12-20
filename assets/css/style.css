@@ -62,9 +62,7 @@ h4 {
     -webkit-text-fill-color: transparent;
 	background-clip: inherit;
     -webkit-background-clip: text;
-    background-size: 130% 130%;
-    -webkit-animation: colorAnimation 5s ease-in-out infinite, .5s forwards;
-    animation: colorAnimation 5s ease-in-out infinite;
+    display: inline;
 }
 
 h5, h6 {
@@ -135,11 +133,12 @@ blockquote {
 
 
 .card-title {
+    display: inline !important;
     background: var(--theme);;
     -webkit-text-fill-color: transparent;
 	background-clip: inherit;
     -webkit-background-clip: text;
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
 }
 
 .card-content {
