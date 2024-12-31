@@ -207,6 +207,19 @@ blockquote {
 
 .bio {
     font-size: 18px;
+    border-radius: .3rem !important;
+    background-size: 150% 150%;
+    background: var(--theme);;
+    position: relative;
+    transform: translate(0);
+    transition: .3s;
+    padding: 3px;
+}
+
+.bio p {
+    background-color: #000000;
+    margin: 0;
+    padding: 1rem;
 }
 
 .footer-icon {
