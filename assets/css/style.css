@@ -217,7 +217,7 @@ blockquote {
 }
 
 .bio p {
-    background-color: #000000;
+    background-color: var(--bgDark);
     margin: 0;
     padding: 1rem;
 }
